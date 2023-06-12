@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../6888606.jpg) no-repeat center center;
+    background-size: contain;
+    color: white;
+  }
+  
+  /* .input-field {
+  
+    margin-left: 30%;
+  } */
+  
+  .input-field input {
+    color: black;
+    border: 2px black solid;
+    border-radius: 5px;
+    text-align: start;
+    padding: 7px 8px;
+    margin: 30px 10px;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 15px;
+  
+  }
+  
+  
+  #verification-container {
+    background-color: #333;
+    padding: 30px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  
+  
+  .verification-btn {
+    display: block;
+    color: black;
+    width: 60%;
+    margin: auto;
+    padding: 7px 8px;
+    margin-top: 30px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .verification-btn:hover {
+    background: antiquewhite;
+  }
+  
+  .input-field {
+    text-align: start;
+  }
+  
+  
+  .input-field input::-webkit-inner-spin-button,
+  .input-field input::-webkit-outer-spin-button {
+    display: none;
+  }

@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+    background-color: white;
+    height: 900px;
+  
+  }
+  
+  p {
+    padding-bottom: 20px;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    padding-bottom: 15px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 10px;
+  }
+  
+  ul {
+    margin: 10px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+  }
+  
+  
+  
+  
+  
+  /*header styling*/
+  
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100 erm;
+    height: 70px;
+    background-color: #333;
+  }
+  
+  /*#head {
+    position: sticky;
+    top: 0;
+  }*/
+  
+  .text-primary {
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .navbar ul a:hover {
+    background-color: antiquewhite;
+    color: black;
+  
+  }
+  
+  .text-primary-black {
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+  
+  
+  }
+  
+  /*body styling*/
+  
+  
+  
+  #container {
+    display: flex;
+    margin-top: 30px;
+    height: 700px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7c08a;
+    background: url(../img/6888606.jpg) no-repeat center center / cover;
+    background-size: contain;
+  
+  
+  }
+  
+  
+  
+  .form-wrap {
+    margin-top: 50px;
+    margin-left: 60%;
+    height: 400px;
+    width: 300px;
+    background-color: #333;
+    border-radius: 4%;
+  
+  }
+  
+  .form-content label {
+    color: white;
+  
+  }
+  
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .content-name {
+    padding: 10px 0px;
+    text-align: left;
+  
+  }
+  
+  .form-wrap input {
+    padding: 7px;
+  
+  }
+  
+  .btn {
+    display: block;
+    margin: auto;
+    width: 100px;
+    padding: 3px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    border-radius: 3%;
+    color: black;
+  }
+  
+  .footer {
+  
+    display: block;
+    text-align: center;
+    margin-left: 61%;
+    margin-top: -110px;
+  
+  }
+  
+  .footer a {
+    color: #333;
+  
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  
+  }
+  
+  .form-wrap button:hover {
+    color: rgb(0, 0, 0);
+    background-color: grey;
+  }
+  
+  /* registration page*/
+  #container2 {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/books-gfd73f02af_1920.jpg) no-repeat center/cover;
+  }
+  
+  .register {
+    margin-top: 30px;
+    height: 750px;
+    width: 500px;
+    margin: auto;
+    background-color: #333;
+    margin-top: 20px;
+  }
+  
+  
+  .split {
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500;
+    height: 500px;
+  }
+  
+  .form-wrap select {
+    padding: 10px;
+  
+  }
+  
+  .text-primary-white {
+    color: white;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 40px;
+    font-size: 40px;
+    border-bottom: white 4px solid;
+  
+  }
+  
+  .reg {
+    padding: 8px 12px;
+  
+  }
+  
+  .formwrap-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 230px;
+    height: 400px;
+  }
+  
+  .formwrap-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .two {
+    background: red;
+  }
+  
+  /*INDEX PAGE STYLING*/
+  /*----------same for all page--------*/
+  /*---------uptohere----------*/
+  
+  #container-index {
+  
+    background-color: grey;
+    width: 80%;
+    margin: auto;
+    height: max-content;
+  }
+  
+  .form-wrap-sell {
+    margin-top: 30px;
+  }
+  
+  .split-sell {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .formwrap-left-sell {
+    justify-content: space-between;
+  
+  }
+  
+  .formwrap-right-sell {
+    justify-content: space-between;
+  
+  }
+  
+  .black {
+    color: black !important;
+  }
+  
+  .form-wrap-sell button:hover {
+    color: white;
+    background-color: black;
+  }
+  
+  .navbar-index ul a:hover,
+  .current {
+    background-color: antiquewhite;
+    color: black;
+  
+  }

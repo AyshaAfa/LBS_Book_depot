@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>header}}
+  <link rel="stylesheet" href="/css/register.css">
+  <title>TRADEit | Register</title>
+</head>
+
+<body>
+  <header id="head">
+   {{>navbar}}
+  </header>
+
+  <section id="container2">
+    <div class="form-wrap-register">
+      <h2 class="text-primary-white">REGISTER</h2>
+      <form action="#">
+        <div class="split">
+          <div class="formwrap-left">
+            <div class="form-content">
+              <label for="name">NAME</label>
+              <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-content">
+              <label for="department">DEPARTMENT</label>
+              <select name="department" id="department" required>
+                <option value="">--select your department--</option>
+                <option value="cse">COMPUTER SCIENCE ENGINEERING</option>
+                <option value="mech">MECHANICAL ENGINEERING</option>
+                <option value="it">IT ENGINEERING</option>
+                <option value="civil">CIVIL ENGINEERING</option>
+                <option value="eee">ELECTRICAL ENGINEERING</option>
+                <option value="ece">ELECTRONICS ENGINEERING</option>
+              </select>
+            </div>
+            <div class="form-content">
+              <label for="semester">SEMESTER</label>
+              <select name="semester" id="semester" required>
+                <option value="">--select your semester--</option>
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+                <option value="S3">S3</option>
+                <option value="S4">S4</option>
+                <option value="S5">S5</option>
+                <option value="S6">S6</option>
+                <option value="S7">S7</option>
+                <option value="S8">S8</option>
+              </select>
+            </div>
+
+            <div class="form-content">
+              <label for="phone-no">PHONE NO.</label>
+              <input type="number" name="phn-no" id="phoneno" required>
+            </div>
+          </div>
+          <div class="formwrap-right">
+
+            <div class="form-content">
+              <label for="email">EMAIL</label>
+              <input type="email" name="email" id="email" placeholder="Institutional mail id" required>
+            </div>
+            <div class="form-content">
+              <label for="username">USERNAME</label>
+              <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-content">
+              <label for="password">PASSWORD</label>
+              <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-content">
+              <label for="confirm-password">CONFIRM PASSWORD</label>
+              <input type="password" name="conf-password" id="confirm_password" required>
+            </div>
+          </div>
+        </div>
+        <button type="submit" id="submit" class="btn-reg">Register</button>
+      </form>
+
+    </div>
+  </section>
+  <script type="text/javascript" src="/js/register.js"></script>
+</body>
+
+</html>

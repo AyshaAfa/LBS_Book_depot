@@ -1,0 +1,88 @@
+
+/*loginpage styling*/
+
+
+
+#container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  height: 700px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7c08a;
+  background: url(../6888606.jpg) no-repeat center center / cover;
+  background-size: contain;
+
+
+}
+
+.move-right {
+  padding-left: 20px;
+}
+
+
+
+.form-wrap {
+
+  margin-left: 60%;
+  width: 300px;
+  background-color: #333;
+  border-radius: 4%;
+
+}
+
+.form-content label {
+  color: white;
+
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+
+.form-wrap input {
+  border-radius: 3px;
+  padding: 7px;
+
+}
+
+.btn {
+  display: block;
+  margin: auto;
+  width: 100px;
+  padding: 6px 7px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  border-radius: 3%;
+  color: black;
+}
+
+
+#footer {
+  margin-top: 20px;
+  margin-left: 61%;
+
+}
+
+#footer a {
+  color: #333;
+
+}
+
+#container a:hover {
+  text-decoration: underline;
+
+}
+
+.form-wrap a:hover {
+  color: antiquewhite;
+}
+
+.form-wrap button:hover {
+  background-color: antiquewhite;
+}

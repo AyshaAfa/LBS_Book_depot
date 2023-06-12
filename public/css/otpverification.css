@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(/6888606.jpg) no-repeat center center;
+    background-size: contain;
+    color: white;
+  }
+  
+  .input-field input {
+    height: 45px;
+    width: 42px;
+    color: black;
+    margin: 0 8px;
+    border: 2px black solid;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+    font-size: larger;
+  
+  }
+  
+  .input-field input::-webkit-inner-spin-button,
+  .input-field input::-webkit-outer-spin-button {
+    display: none;
+  }
+  
+  #verification-container {
+    background-color: #333;
+    padding: 30px 65px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  #verification-icon {
+    text-align: center;
+  }
+  
+  
+  
+  h2 {
+    text-align: center;
+    margin: 20px 0px;
+  }
+  
+  #verification-icon {
+    font-size: 40px;
+  }
+  
+  .verification-btn {
+    display: block;
+    color: black;
+    width: 60%;
+    margin: auto;
+    padding: 7px 8px;
+    margin-top: 30px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .verification-btn:hover {
+    background: antiquewhite;
+  }
+  
+  .input-field {
+    text-align: center;
+  }
+  
+  .input-field input:focus {
+    border: 2px solid antiquewhite;
+    /* box-shadow: 0 0 2px 2px antiquewhite; */
+  }

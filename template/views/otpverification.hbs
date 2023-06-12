@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>header}}
+  <link rel="stylesheet" href="/css/otpverification.css">
+  <title>Password reset</title>
+</head>
+
+<body>
+  <section id="verification-container">
+    <h3>An OTP has been sent to the registered mobile number!</h3>
+    <h2>Enter OTP code</h2>
+
+    <form action="/otpverification" method="post">
+      <div class="input-field">
+        <input type="number" class="code" id="number1" >
+        <input type="number" class="code" id="number2" >
+        <input type="number" class="code" id="number3" >
+        <input type="number" class="code" id="number4" >
+      </div>
+      <button type="submit" id="submit" class="verification-btn">Verify OTP</button>
+
+    </form>
+
+  </section>
+  <script src="js/otp_verification.js"></script>
+</body>
+
+</html>

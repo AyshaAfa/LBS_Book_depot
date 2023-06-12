@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ {{>header}}
+  <link rel="stylesheet" href="/css/login.css">
+  <title>TRADEit | login</title>
+</head>
+
+<body>
+  <header id="head">
+   {{>navbar3}}
+  </header>
+
+  <section id="container">
+    <div class="form-wrap">
+      <h2 class="text-primary"> ADMIN LOGIN</h2>
+      <form action="#">
+        <div class="form-content">
+          <label class="content-name" for="username">USERNAME</label>
+          <input type="text" name="username" id="username" placeholder="enter your username" required>
+        </div>
+        <div class="form-content">
+          <label class="content-name" for="password">PASSWORD</label>
+          <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit" id="submit-button" class="btn">login</button>
+      </form>
+    </div>
+    
+  </section>
+
+
+
+
+<script type="text/javascript" src="/js/adminlogin.js"></script>
+</body>
+
+</html>

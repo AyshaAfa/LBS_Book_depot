@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <link rel="stylesheet" href="/css/bookdetails.css">
+</head>
+<body>
+    {{>homepagenavbar}}
+   <section class="bookdetail">
+    {{#each result1}}
+    <div class="left-pic">
+        <img src="/upload/{{upload}}" alt="here is an image of book">
+    </div>
+    <div class="right-details">
+           <p id="bookname">{{bookname}}</p> 
+            <ul>
+                <li><span class="list-itemname">Author :</span> {{authorname}} </li>
+                <li><span class="list-itemname">Sem : </span> {{semester}} </li>
+                <li><span class="list-itemname">Condition : </span> {{condition}} </li>
+                <li><span class="list-itemname">Market price :</span> {{market_price}} </li>
+                <li><span class="list-itemname" id="proposedprice">Proposed price :</span> {{proposed_price}}</li>
+                <li><span class="list-itemname">Seller : </span> {{name}} </li>
+            </ul>
+          <form action="">
+            <label for="bid-amount"> <span class="list-itemname"> Enter your bid amoumt : </span> </label>
+            <input type="int" name="bid-amount" id="bidamount">
+             <button type="submit" id="submit" class="btn-reg">Submit</button>
+          </form>
+          <table class="content-table">
+            <p id="bidding-table-name">Bidding list</p>
+        <thead>
+            <tr style="border-bottom: 2px black solid;">
+              
+                <th>SL NO.</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+            <td>{{resultbid}}</td>
+            <td>{{resultamount}}</td>
+        </tbody>
+    </table>
+    </div>
+   
+    {{/each}}
+   </section> 
+    <script type="text/javascript"src="/js/bookdetail.js"></script>
+</body>
+</html>

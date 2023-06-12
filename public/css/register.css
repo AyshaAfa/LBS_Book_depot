@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7em;
+  background-color: white;
+  height: 100vh;
+
+}
+
+p {
+  padding-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+  padding-bottom: 15px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  width: 100 erm;
+  height: 70px;
+  background-color: #333;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 20px 10px;
+}
+
+.text-primary {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+#container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url(../books-gfd73f02af_1920.jpg) no-repeat center/cover;
+}
+
+.form-wrap-register {
+  background: #333;
+  padding: 30px 30px;
+  color: white;
+  border: none;
+  border-radius: 7px;
+}
+
+.form-wrap-register h2 {
+  text-align: center;
+  font-size: 40px;
+  padding: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.split {
+  display: flex;
+  padding-bottom: 50px;
+
+}
+
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+.formwrap-left {
+  padding: 0px 30px;
+}
+
+.formwrap-right {
+  padding: 0px 30px;
+}
+
+.form-wrap-register input {
+  border-radius: 3px;
+  padding: 7px;
+  border: none;
+
+}
+
+.form-wrap-register select {
+
+  padding: 7px;
+}
+
+.btn-reg {
+  display: block;
+  margin: auto;
+  width: 70%;
+  padding: 6px 7px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  border-radius: 3%;
+  cursor: pointer;
+
+}
+
+.btn-reg:hover {
+  background-color: antiquewhite;
+}
+
+
+.form-wrap-register input::-webkit-inner-spin-button,
+.form-wrap-register input::-webkit-outer-spin-button {
+  display: none;
+}

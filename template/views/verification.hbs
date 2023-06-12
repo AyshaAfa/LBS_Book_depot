@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+     <link rel="stylesheet" href="/css/pwresetmobileno.css">
+    <title>Document</title>
+</head>
+<body>
+     <section id="verification-container">
+
+        <h2>Enter your registered mobile number</h2>
+
+         <form action="/verify" method="post">
+          <div class="input-field">
+             <input type="number" name="mobile-no" id="phonenumber" placeholder="Enter your mobile number" required>
+           </div>
+          <button type="submit" class="verification-btn" id="submit">Submit</button>
+           </form>
+      </section>
+       <script type="text/javascript" src="/js/verify.js"></script>
+</body>
+</html>
+ 
+
+
+   {{!-- <form action="/verify" method="post">
+        <label class="content-name"for="phonenumber">Mobile Number</label>
+         <input type="tel" name="phonenumber" id="phonenumber" placeholder="enter your mobile number">
+      </form>
+        <button type="submit" id="submit" class="btn">verify</button> --}}

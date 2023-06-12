@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+    background-color: white;
+    height: 900px;
+    color: black;
+  
+  
+  }
+  
+  p {
+    font-size: larger;
+    /* padding-bottom: 20px; */
+  }
+  
+
+.bookdetail {
+display: flex;
+padding: 2rem;
+margin:3rem;
+background:transparent;
+width: 90%;
+height: 600px;
+}
+
+.left-pic{
+    width: 50%;
+    align-items: center;
+}
+
+.right-details{
+width: 50%;
+}
+
+
+
+#bookname {
+    padding-bottom: 20px;
+    font-weight: bolder;
+    border-bottom: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.bookdetail .right-details li{
+    margin-bottom: 1rem;
+}
+
+.list-itemname {
+    font-weight: bold;
+}
+
+.bookdetail .left-pic img{
+    height: 90%;
+    width: 60%;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+form input {
+    border-radius: 3px;
+    padding: 7px;
+ 
+  
+}
+
+.btn-reg {
+    margin: auto;
+    /* width: 70%; */
+    padding: 6px 7px;
+    border: none;
+    border-radius: 3%;
+    color: white;
+    cursor: pointer;
+    background: #333;
+  
+  }
+
+  .btn-reg:hover {
+    background-color: #515050;
+  }
+
+/*bid table*/
+.content-table {
+    margin-top: 10px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1 rem;
+    min-width: 100%;
+}
+
+.content-table thead tr {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: bold;
+}
+
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #333;
+}
+
+#bidding-table-name {
+    text-align: center;
+    margin-top: 3rem;
+    border-bottom: 1px solid black;
+}
