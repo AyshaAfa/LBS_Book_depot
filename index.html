@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/user_index.css" />
+    <script
+      src="https://kit.fontawesome.com/66776f9ec8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>welcome to Tradeit</title>
+  </head>
+
+  <body>
+    <!--SAME FOR ALL PAGE-->
+    <header>
+      <div class="navbar-index">
+        <h1 class="text-primary">TRADEit</h1>
+        <nav class="index-nav">
+          <ul>
+            <li><a href="index.html" class="current">SELL BOOKS</a></li>
+            <li><a href="mybooks.html">MY BOOKS</a></li>
+            <li><a href="#">VIEW BOOKS</a></li>
+            <li><a href="#">MY ORDERS</a></li>
+            <li><i class="fa-sharp fa-regular fa-envelope"></i></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--upto here same for all page-->
+    <section id="container-index">
+      <div class="form-wrap-sell">
+        <h2 class="text-primary-black">SELL BOOKS</h2>
+        <form action="#">
+          <div class="split-sell">
+            <div class="formwrap-left-sell">
+              <div class="form-content">
+                <label for="book-name">Bookname</label>
+                <input type="text" name="bname" id="book-name" required />
+              </div>
+              <div class="form-content">
+                <label for="auth-name">Authorname</label>
+                <input type="text" name="authname" id="auth-name" required />
+              </div>
+              <div class="form-content">
+                <label for="semester">SEMESTER</label>
+                <select name="semester" id="semester" required>
+                  <option value="">
+                    --select the semester the book is used--
+                  </option>
+                  <option value="s1">s1&s2</option>
+                  <option value="s3">s3</option>
+                  <option value="s4">s4</option>
+                  <option value="s5">s5</option>
+                  <option value="s6">s6</option>
+                  <option value="s7">s7</option>
+                  <option value="s8">s8</option>
+                </select>
+              </div>
+              <div class="form-content">
+                <label for="condition">condition</label>
+                <select name="condition" id="condition" required>
+                  <option value="">--select book condition--</option>
+                  <option value="new">new</option>
+                  <option value="good">good</option>
+                  <option value="fair">fair</option>
+                  <option value="poor">poor</option>
+                </select>
+              </div>
+              <div class="form-content">
+                <label for="image-file">ADD IMAGE</label>
+                <input type="file" name="image-file" id="image-file" required />
+              </div>
+            </div>
+            <div class="formwrap-right-sell">
+              <div class="form-content">
+                <label for="purchase-date">PURCHASE DATE</label>
+                <input type="date" name="pdate" id="purchase-date" required />
+              </div>
+              <div class="form-content">
+                <label for="market-price">MARKET PRICE</label>
+                <input type="number" name="mprice" id="market-price" required />
+              </div>
+              <div class="form-content">
+                <label for="proposed-price">PROPOSED PRICE</label>
+                <input
+                  type="number"
+                  name="pprice"
+                  id="proposed-price"
+                  required
+                />
+              </div>
+              <div class="form-content">
+                <label for="description">DESCRIPTION</label>
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">submit</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
