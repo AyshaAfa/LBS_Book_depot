@@ -28,6 +28,9 @@ const otpverification = require("../src/modules/verification");
 const passwordreset = require("../src/modules/passwordreset");
 require("dotenv").config();
 const env=process.env;
+const confirmation=require("../src/modules/confirmation");
+
+
 
 app.use(session({
   secret: "H8VpEypeDG",
@@ -83,6 +86,7 @@ const checkLoggedIn = (req, res, next) => {
   if (req.session.logged_in) {
     next();
   } else {
+    console.log(req.user)
     res.redirect("/");
   }
 }
@@ -189,6 +193,7 @@ app.post("/otpverification",(req,res)=>{
 //viewbook
 
 app.get("/home",(req,res)=>{
+      env.userid=req.query.uid;
       let sql="SELECT book.bookid, book.bookname, uploadimage.upload FROM book INNER JOIN uploadimage ON book.uploadid = uploadimage.uploadid"
       con.query(sql,function(error,result,fields)
       {
@@ -205,13 +210,19 @@ app.get("/home",(req,res)=>{
 })
 
 
+app.get("/home/confirmation",checkLoggedIn,(req,res)=>{
+ // let uid= req.query.uid;
+ const userid=env.userid;
+  confirmation(userid,res);
+})
+
 
 
 
 
 
 //viewuser
-app.get("/viewuser",(req,res)=>{
+app.get("/viewuser",checkLoggedIn,(req,res)=>{
   res.render("viewuser",{
 
   });
@@ -259,5 +270,5 @@ app.post("/adminlogin",async(req,res)=>{
 
 app.listen(port, () => {
   console.log(`listening to ${port}`);
-  schedule.finalizeonbid();
+  //schedule.finalizeonbid();
 });

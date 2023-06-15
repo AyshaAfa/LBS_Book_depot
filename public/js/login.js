@@ -25,6 +25,7 @@ submit.addEventListener("click", (event) => {
       if (data.success===true) {
         const urlParams = new URLSearchParams(window.location.search);
         urlParams.set('uid', data.result[0].userid);
+
         const newUrl = "/home"+ '?' + urlParams.toString();
         localStorage.setItem('uid', data.result[0].userid);
         alert("Login successful");

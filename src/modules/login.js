@@ -43,7 +43,7 @@ function capitalizeFirstLetter(string) {
 function login(req, res) {
   let username = req.body.username;
   let password = req.body.password;
-  const useremail = `SELECT name,userid,password,mobile FROM user WHERE username='${username}'`;
+  const useremail = `SELECT userid,name,userid,password,mobile FROM user WHERE username='${username}'`;
   let sql = `select * from book;`
   con.query(useremail, async (error, result, fields) => {
     try {
@@ -57,8 +57,6 @@ function login(req, res) {
           const mobile = result[0].mobile;
           const name = result[0].name.toUpperCase();
           const fname = result[0].name;
-          const cname = capitalizeFirstLetter(fname);
-          console.log(cname);
           const otpgeneration = otp(4);
 
           const message = `This message is from LbsDepot!!!!!
@@ -70,7 +68,8 @@ function login(req, res) {
               try {
                 if (error) throw error;
                 if (result1.length > 0) {
-                    console.log("i here now")
+                    req.user=result[0].userid
+
                   return res.json({
                     result: result,
                     success: true
