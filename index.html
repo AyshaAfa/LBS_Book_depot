@@ -1,33 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/user_index.css" />
-    <script
-      src="https://kit.fontawesome.com/66776f9ec8.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>welcome to Tradeit</title>
+{{>header}}
   </head>
 
   <body>
     <!--SAME FOR ALL PAGE-->
-    <header>
-      <div class="navbar-index">
-        <h1 class="text-primary">TRADEit</h1>
-        <nav class="index-nav">
-          <ul>
-            <li><a href="index.html" class="current">SELL BOOKS</a></li>
-            <li><a href="mybooks.html">MY BOOKS</a></li>
-            <li><a href="#">VIEW BOOKS</a></li>
-            <li><a href="#">MY ORDERS</a></li>
-            <li><i class="fa-sharp fa-regular fa-envelope"></i></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    {{>homepagenavbar}}
     <!--upto here same for all page-->
     <section id="container-index">
       <div class="form-wrap-sell">
@@ -68,10 +47,13 @@
                   <option value="poor">poor</option>
                 </select>
               </div>
-              <div class="form-content">
-                <label for="image-file">ADD IMAGE</label>
-                <input type="file" name="image-file" id="image-file" required />
-              </div>
+        <form class="split-sell" id="form2" action="/home/bookregisterpicture" method="post" enctype="multipart/form-data" >
+          <div class="form-content">
+            <label class="content-name black" for="imagefile">ADD IMAGE</label>
+            <input type="file" name="imagefile" id="imagefile">
+           <!--<button type="submit" id="submit1" class="btn" >submit</button>-->
+          </div>
+          </form>
             </div>
             <div class="formwrap-right-sell">
               <div class="form-content">
@@ -107,5 +89,6 @@
         </form>
       </div>
     </section>
+    <script type="text/javascript" src="/js/bookregister.js"></script>
   </body>
 </html>
