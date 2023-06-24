@@ -6,6 +6,9 @@
 </head>
 <body>
     {{>homepagenavbar}}
+    <section>
+
+    </section>
    <section class="bookdetail">
     {{#each result1}}
     <div class="left-pic">
@@ -20,30 +23,23 @@
                 <li><span class="list-itemname">Market price :</span> {{market_price}} </li>
                 <li><span class="list-itemname" id="proposedprice">Proposed price :</span> {{proposed_price}}</li>
                 <li><span class="list-itemname">Seller : </span> {{name}} </li>
+               
             </ul>
+            </div>
+          
+
+ 
+   </section> 
+     <div class="biddetails_box">
           <form action="">
             <label for="bid-amount"> <span class="list-itemname"> Enter your bid amoumt : </span> </label>
             <input type="int" name="bid-amount" id="bidamount">
              <button type="submit" id="submit" class="btn-reg">Submit</button>
           </form>
-          <table class="content-table">
-            <p id="bidding-table-name">Bidding list</p>
-        <thead>
-            <tr style="border-bottom: 2px black solid;">
-              
-                <th>SL NO.</th>
-                <th>Amount</th>
-            </tr>
-        </thead>
-        <tbody id="output">
-            <td>{{resultbid}}</td>
-            <td>{{resultamount}}</td>
-        </tbody>
-    </table>
-    </div>
-   
-    {{/each}}
-   </section> 
+          <div class="maxbid_amount">Maxbided amount : ₹{{resultamount}}</div>
+
+            </div>
+             {{/each}}
     <script type="text/javascript"src="/js/bookdetail.js"></script>
 </body>
 </html>

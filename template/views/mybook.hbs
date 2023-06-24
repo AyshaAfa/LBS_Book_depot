@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        {{>header}}
+        <link rel="stylesheet" href="/css/viewbook.css">
+    </head>
+ 
+    <body>
+        {{>homepagenavbar}}
 
-<head>
-    {{>header}}
-  <link rel="stylesheet" href="../css/stylesheet.css">
-  <title>welcome to Tradeit</title>
-</head>
+   
+            <div class="grid-space">
+             {{#each result}}
+                
+                 <div class="grid-box" >
+                   
+                       <img src='/upload/{{upload}}' alt="here is the image">
+                      <p>{{bookname}}</p>
+                      <a href="/home/bookdetail?bid={{bookid}}"></a>
+                 </div>
+             {{/each}}
+           </div>        
 
-<body>
-
-  <!--same for all page-->
-  <header id="head">
-    {{>navbar2}}
-   </header>
-
-  <!--upto here same for all page-->
-
-
-</body>
+ 
+      {{!-- <script type="text/javascript"src="/js/viewbook.js"></script>  --}}
+    </body>  
 
 </html>

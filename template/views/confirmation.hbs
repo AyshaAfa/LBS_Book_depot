@@ -6,5 +6,15 @@
   <link rel="stylesheet" href="/css/login.css">
   <title>TRADEit | login</title>
 </head>
+<body>
+ {{>homepagenavbar}}
+ <div class="background_message">
+    {{#each result}}
+ <div class="message_space">
+    <p class="message">Congratulations...Your Bid for the book {{bookname}} has been confirmed..please pay the amount of Rs.{{bidamount}} within 2 days</p>
+ </div>
+   {{/each}}
+ </div>
+</body>
 
 

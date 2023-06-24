@@ -6,28 +6,21 @@ async function bookdetail(req,res){
         let bookid=await req.query.bid;
        
         let sql=await `select bookname,authorname,book.semester,book.condition,proposed_price,market_price,uploadimage.upload,user.name,user.semester,user.department FROM book INNER JOIN uploadimage ON book.uploadid=uploadimage.uploadid INNER JOIN user ON book.userid=user.userid where bookid='${bookid}';`;
-        let sql1=await `select bidid,bidamount from bid where bookid='${bookid}'`;
+        let sql1=await `select bidid,bidamount from bid where bookid='${bookid}' and bidamount=(select max(bidamount) from bid where bookid=${bookid})`;
         con.query(sql,async(error,result)=>{
             try {
                 if(result.length>0){
                     const result1=result
+                    //console.log(result1[0]);
                     con.query(sql1,async(error,result)=>{
                         try {
                             if(error) throw error;
-                            let resultbid=[]
-                            let resultamount=[]
-                            for(let i=0;i<result.length;i++){
-                                resultbid[i]=result[i].bidid;
-                                resultamount[i]=result[i].bidamount;
-                            }
-                            result1.resultbid=resultbid;
-                            result1.resultamount=resultamount;
-                            let merge={
-                                ...result1[0],
-                                'bidid':result1.resultbid,
-                                'bidamount':result1.resultamount
-                            }
-                            console.log(merge);
+                            let resultbid
+                            let resultamount;
+                            console.log(result);
+                            result1[0].resultbid=result[0].bidid;
+                            result1[0].resultamount=result[0].bidamount;
+                            console.log(result1)
                             res.render("bookdetail",{
                                 result1
                               });

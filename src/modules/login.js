@@ -4,7 +4,7 @@ const con = require("../db/connect");
 const bcrypt = require("bcryptjs");
 const fast2sms = require("fast-two-sms");
 const unirest = require("unirest");
-
+let userid=0;
 var req = unirest("GET", "https://www.fast2sms.com/dev/bulkV2");
 
 async function otplogin(mobile, message) {
@@ -64,6 +64,7 @@ function login(req, res) {
 
           if (passwordcheck === true) {
             req.session.logged_in = true;
+            userid=result[0].userid;
             con.query(sql, async (error, result1) => {
               try {
                 if (error) throw error;

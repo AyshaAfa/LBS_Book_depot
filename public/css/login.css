@@ -86,3 +86,30 @@
 .form-wrap button:hover {
   background-color: antiquewhite;
 }
+
+
+.background_message {
+  display: grid;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+
+.message_space {
+background: #333;
+ margin-top: 20px;
+ margin-left: 10px;
+ width: 90%;
+ color: white;
+}
+
+.message {
+  padding:50px
+}
+
+.no_message {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 20%;
+}

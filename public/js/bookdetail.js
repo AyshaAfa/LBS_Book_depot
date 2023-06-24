@@ -58,16 +58,17 @@ fetch("/home/bookdetail", {
     }
     if(responseData.success){
         const output=document.getElementById("output")
-        let out="";
-        for(let row of responseData.result4)
-        {
-              out+=`
-              <td>${row.bidid}</td>
-              <td>${row.bidamount}</td>
-              `
-        }
+        // let out="";
+        // for(let row of responseData.result4)
+        // {
+        //       out+=`
+        //       <td>${row.bidid}</td>
+        //       <td>${row.bidamount}</td>
+        //       `
+        // }
         alert("bidded successfully");
-        output.outerHTML=out;
+        
+        //output.outerHTML=out;
         clear(success)
     }
   })

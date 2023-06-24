@@ -1,84 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   {{>header}}
-    <link rel="stylesheet" type="text/css" href="/css/bookdetail.css">
-</head>
-<body>
-{{>bookregister}}
-    <section id="container-index">
-    <div class="form-wrap-sell">
-      <h2 class="text-primary-black">SELL BOOKS</h2>
-      <form class="split-sell" id="form1" action="/home/bookregister" method="post" >
-        <div class="formwrap-left-sell">
-          <div class="form-content">
-            <label class="content-name black" for="book-name">Bookname</label>
-            <input type="text" name="bname" id="book-name">
-          </div>
-          <div class="form-content">
-            <label class="content-name black" for="auth-name">Authorname</label>
-            <input type="text" name="authname" id="auth-name">
-          </div>
-          <div class="form-content">
-            <label class="content-name black" for="semester">SEMESTER</label>
-            <select name="semester" id="semester">
-              <option value="">--select the semester the book is used--</option>
-              <option value="s1">S1</option>
-              <option value="s2">S2</option>
-              <option value="s3">S3</option>
-              <option value="s4">S4</option>
-              <option value="s5">S5</option>
-              <option value="s6">S6</option>
-              <option value="s7">S7</option>
-              <option value="s8">S8</option>
-            </select>
-          </div>
-          <div class="form-content">
-            <label class="content-name black" for="condition">condition</label>
-            <select name="condition" id="condition">
-              <option value="">--select book condition--</option>
-              <option value="new">new</option>
-              <option value="good">good</option>
-              <option value="fair">fair</option>
-              <option value="poor">poor</option>
-            </select>
-          </div>
-        
-        </div>
-        <div class="formwrap-right-sell">
-          <div class="form-content">
-            <label class="content-name black" for="purchase-date">PURCHASE DATE</label>
-            <input type="date" name="pdate" id="purchase-date">
-          </div>
-          <div class="form-content">
-            <label class="content-name black" for="market-price">MARKET PRICE</label>
-            <input type="int" name="mprice" id="market-price">
-          </div>
-          <div class="form-content">
-            <label class="content-name black" for="proposed-price">PROPOSED PRICE</label>
-            <input type="int" name="price" id="proposed-price">
-          </div>
-          </form>
-          <div class="form-content">
-            <label class="content-name black" for="description">DESCRIPTION</label>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
-          </div>
+  <head>
+{{>header}}
+<link rel="stylesheet" type="text/css" href="/css/bookdetail.css">
+  </head>
 
-        </div>
-      </form>
-       <form class="split-sell" id="form2" action="/home/bookregisterpicture" method="post" enctype="multipart/form-data" >
+  <body>
+    <!--SAME FOR ALL PAGE-->
+    {{>homepagenavbar}}
+    <!--upto here same for all page-->
+    <section id="container-index">
+      <div class="form-wrap-sell">
+        <h2 class="text-primary-black">SELL BOOKS</h2>
+        <form action="#">
+          <div class="split-sell">
+            <div class="formwrap-left-sell">
+              <div class="form-content">
+                <label for="book-name">Bookname</label>
+                <input type="text" name="bname" id="book-name" required />
+              </div>
+              <div class="form-content">
+                <label for="auth-name">Authorname</label>
+                <input type="text" name="authname" id="auth-name" required />
+              </div>
+              <div class="form-content">
+                <label for="semester">SEMESTER</label>
+                <select name="semester" id="semester" required>
+                  <option value="">
+                    --select the semester the book is used--
+                  </option>
+                  <option value="S1">S1</option>
+                  <option value="S2">S2</option>
+                  <option value="S3">S3</option>
+                  <option value="S4">S4</option>
+                  <option value="S5">S5</option>
+                  <option value="S6">S6</option>
+                  <option value="S7">S7</option>
+                  <option value="S8">S8</option>
+                </select>
+              </div>
+              <div class="form-content">
+                <label for="condition">condition</label>
+                <select name="condition" id="condition" required>
+                  <option value="">--select book condition--</option>
+                  <option value="new">new</option>
+                  <option value="good">good</option>
+                  <option value="fair">fair</option>
+                  <option value="poor">poor</option>
+                </select>
+              </div>
+        <form class="split-sell" id="form2" action="/home/bookregisterpicture" method="post" enctype="multipart/form-data" >
           <div class="form-content">
             <label class="content-name black" for="imagefile">ADD IMAGE</label>
             <input type="file" name="imagefile" id="imagefile">
-           <!--<button type="submit" id="submit1" class="btn" >submit</button>-->
           </div>
           </form>
-     <button type="submit" id="submit" class="btn" >submit</button>
-  </section>
-<script type="text/javascript" src="/js/bookregister.js"></script>
-<!--<script type="text/javascript" src="/js/bookregisterpic.js"></script>
---></body>
+            </div>
+            <div class="formwrap-right-sell">
+              <div class="form-content">
+                <label for="purchase-date">PURCHASE DATE</label>
+                <input type="date" name="pdate" id="purchase-date" required />
+              </div>
+              <div class="form-content">
+                <label for="market-price">MARKET PRICE</label>
+                <input type="number" name="mprice" id="market-price" required />
+              </div>
+              <div class="form-content">
+                <label for="proposed-price">PROPOSED PRICE</label>
+                <input
+                  type="number"
+                  name="pprice"
+                  id="proposed-price"
+                  required
+                />
+              </div>
+              <div class="form-content">
+                <label for="description">DESCRIPTION</label>
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" id="submit" class="btn">submit</button>
+        </form>
+      </div>
+    </section>
+    <script type="text/javascript" src="/js/bookregister.js"></script>
+  </body>
 </html>
+
 
 
 
