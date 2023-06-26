@@ -36,6 +36,11 @@ fetch("/home/bookdetail", {
     let alert3=responseData.alert3;
     let alert4=responseData.alert4;
     let success=responseData.success;
+    let alert5=responseData.alert5;
+    if(alert5){
+      alert(`Can't bid for the book since you are the seller`)
+      clear(alert5);
+    }
     if(alert3){
       alert(`OOPS!!! Please place your Bid in between 7AM-8PM`);
       clear(alert3);
@@ -57,18 +62,11 @@ fetch("/home/bookdetail", {
         clear(alert2);
     }
     if(responseData.success){
-        const output=document.getElementById("output")
-        // let out="";
-        // for(let row of responseData.result4)
-        // {
-        //       out+=`
-        //       <td>${row.bidid}</td>
-        //       <td>${row.bidamount}</td>
-        //       `
-        // }
+        // const output=document.getElementById("max")
+        // out=responseData.result;
         alert("bidded successfully");
         
-        //output.outerHTML=out;
+        // output.outerHTML=out;
         clear(success)
     }
   })

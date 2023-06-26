@@ -8,7 +8,7 @@
     {{>homepagenavbar}}
     <section id="bookcontainer">
         <section class="bookdetail">
-           {{#each result1}}
+           {{#each result}}
           <div class="left-pic">
                  <img src="/upload/{{upload}}" alt="here is an image of book">
           </div>
@@ -26,18 +26,34 @@
          </div>
           
     </section> 
-     <div class="biddetails_box">
+
+     {{#if (isNight)}}
+    <div class="payment">
+        <p class="payment_msg">Payment confirmation</p>
+        <div class="payment_section">
+        <p>Received payment yet!?</p>
+      
+        <button type="submit move_left" class="btn-reg" id="yes">Yes</button>
+        <button type="submit" class="btn-reg" id="no" >No</button>
+        </div>
+        
+    </div>
+{{else}}
+    <p></p>
+{{/if}} 
+
+     {{!-- <div class="biddetails_box">
           <form action="">
             <label for="bid-amount"> <span class="list-itemname"> Enter your bid amoumt : </span> </label>
             <input type="int" name="bid-amount" id="bidamount">
              <button type="submit" id="submit" class="btn-reg">Submit</button>
           </form>
-          <div class="maxbid_amount"><span class="list-itemname" id="max">Highest Bid Amount : ₹{{resultamount}}</span></div>
+          <div class="maxbid_amount"><span class="list-itemname" id="max">Maxbided amount : ₹{{resultamount}}</span></div>
 
-     </div>
+     </div> --}}
  {{/each}}
     </section>
   
-    <script type="text/javascript"src="/js/bookdetail.js"></script>
+    <script type="text/javascript"src="/js/confirmpayment.js"></script>
 </body>
 </html>

@@ -6,24 +6,20 @@ const bookregister=require("../src/modules/bookregister");
 const verify=require("../src/modules/verificationreq");
 const verification=require("../src/modules/verification");
 const reset=require("../src/modules/passwordreset");
-const adminlogin=require("../src/modules/adminlogin");
+const adminlogin=require("../src/modules/adminModules/adminlogin");
+const adminhomepage=require("../src/modules/adminModules/adminHomepage");
 const bookdetail=require("../src/modules/bookdetail");
 const bidrequest=require("../src/modules/bidrequest");
 const express = require("express");
 const session=require("express-session");
 const app = express();
-
-
+const exphbs=require("express-handlebars");
 app.use(session({
   secret: 'H8VpEypeDG',
   resave: false,
   saveUninitialized: true
 }));
-
-
 const con=require("./db/connect")
-//const express = require("express");
-//const app = express();
 const path = require("path");
 const hbs=require("hbs");
 const { error } = require("console");
@@ -41,36 +37,28 @@ require("dotenv").config();
 const env=process.env;
 const confirmation=require("../src/modules/confirmation");
 const mybook=require("../src/modules/mybook")
-let userid=0;
-
-// app.use(session({
-//   secret: "H8VpEypeDG",
-//   resave: false,
-//   saveUninitialized: true
-// }));
-
-
+const myorder=require("../src/modules/myorder");
 const createpasswordhash=async(password)=>{
   const passwordhash=await bcrypt.hash(password,10);
   return passwordhash;
 }//this functions create hashing password 
-
-
-
-
-
-
 app.use(express.json());
 
 const staticPath = path.join(__dirname, "../public");
 const templatepath=path.join(__dirname,"../template/views");
+const backup=path.join(__dirname,"../template/backup");
 const partials=path.join(__dirname,"../template/partials");
 const imageupload=path.join(__dirname,"/upload")
 app.use("/upload",express.static(imageupload))
 app.use(express.static(staticPath));
 app.set("view engine","hbs");
 app.set("views",templatepath);
+//app.set("backup",backup);
 hbs.registerPartials(partials);
+hbs.registerHelper('isNight',function(){
+  const currenttime=new Date().getHours()
+  return currenttime<=21||currenttime>7
+})
 
 //setup for image storing from here 
 let storage=multer.diskStorage({
@@ -84,12 +72,6 @@ let storage=multer.diskStorage({
 let upload=multer({
   storage:storage
 })
-
-
-
-
-
-
 
 
 // checking login page 
@@ -183,6 +165,7 @@ function capitalizeFirstLetter(string) {
               try {
                 if (error) throw error;
                 if (result1.length > 0) {
+                  app.set("uid",userid)
                   return res.json({success:true ,result:result})
                 } else {
                   app.set("uid",userid)
@@ -207,7 +190,7 @@ function capitalizeFirstLetter(string) {
 
 //backup for login page this page for if page doesnot have book
 app.get("/bhome",async(req,res)=>{
-  res.render("homepage");
+  res.render("backup/homepage");
 })
 
 //resetpassword
@@ -297,9 +280,11 @@ app.get("/home",(req,res)=>{
       con.query(sql,function(error,result,fields)
       {
           if(error) throw error;
+          //const homepageTemplate = book.length === 0 ? 'homepage' : 'viewbook';
           if(result.length>0)
           {
-            res.render("viewbook",{
+            const homepageTemplate = result.length === 0 ? 'backupHomepage' : 'viewbook';
+            res.render(homepageTemplate,{
               result
             })
         }
@@ -311,7 +296,6 @@ app.get("/home",(req,res)=>{
 //confirmation 
 app.get("/home/confirmation",(req,res)=>{
  const userid1=app.get("uid")
-  console.log(userid1);
  const userid=env.userid;
   confirmation(userid1,res);
 })
@@ -320,9 +304,10 @@ app.get("/home/confirmation",(req,res)=>{
 
 app.get("/home/order",async(req,res)=>{
   try {
-    res.render("orderBook");
+        let userid=app.get("uid")
+        myorder(req,res,userid)
   } catch (error) {
-    console.log(error);
+        console.log(error);
   }
 })
 
@@ -358,7 +343,7 @@ app.post("/viewuser",(req,res)=>{
 //bookdetail
 app.get("/home/bookdetail",async(req,res)=>{
   try {
-   bookdetail(req,res);
+   bookdetail.bookdetail(req,res);
   } catch (error) {
     console.log(error);
   }
@@ -370,7 +355,14 @@ app.post("/home/bookdetail",async(req,res)=>{
     console.log(error);
   }
 })
-
+//myorderbookdetail
+app.get("/home/mybooks/bookdetail",async(req,res)=>{
+  try {
+      bookdetail.myBookdetail(req,res)
+  } catch (error) {
+    throw error;
+  }
+})
 
 //mybook
 app.get("/home/mybooks",async(req,res)=>{
@@ -380,6 +372,13 @@ app.get("/home/mybooks",async(req,res)=>{
     } catch (error) {
       throw error;
     }
+})
+app.get("/home/mybooks/bookdetail",async(req,res)=>{
+  try {
+      bookdetail(req,res);
+  } catch (error) {
+    throw error;
+  }
 })
 
 
@@ -399,5 +398,6 @@ app.post("/adminlogin",async(req,res)=>{
 
 app.listen(port, () => {
   console.log(`listening to ${port}`);
+  console.log(new Date().toLocaleDateString())
   //schedule.finalizeonbid();
 });
