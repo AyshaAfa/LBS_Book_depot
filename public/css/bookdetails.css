@@ -23,7 +23,11 @@
 .bookdetail {
 display: flex;
 /* padding: 2rem; */
-margin:3rem;
+
+margin-top:2rem ;
+margin-left:3rem ;
+margin-bottom: 2rem;
+margin-right: 3rem;
 background:transparent;
 width: 90%;
 height: 600px;
@@ -75,11 +79,7 @@ width: 50%;
 }
 
 
-.biddetails_box {
-    margin-top: 100px;
-    border:black 2px solid;
-    padding: 15px;
-}
+
 
 .bookdetail {
     border: 2px black solid;
@@ -112,6 +112,33 @@ form input {
   .btn-reg:hover {
     background-color: #515050;
   }
+  .biddetails_box {
+    border:black 2px solid;
+    padding: 15px;
+}
+
+  #bookcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment {
+    margin-left: 50px;
+}
+.payment_section {
+    margin-top: 20px;
+border: black 2px solid;
+padding: 20px;
+font-size: large;
+
+}
+
+.payment_msg{
+    font-size: 2rem;
+    font-style: oblique;
+}
 
 /*bid table*/
 .content-table {
@@ -147,5 +174,6 @@ form input {
     margin-top: 3rem;
     border-bottom: 1px solid black;
 }
+
 
 /* #maxbid_amount */

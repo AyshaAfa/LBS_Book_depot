@@ -1,5 +1,8 @@
 const submitBtn = document.getElementById("submit");
 const uid=localStorage.getItem('uid');
+function uppercase(){
+  
+}
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   

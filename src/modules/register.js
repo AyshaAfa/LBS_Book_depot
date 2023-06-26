@@ -20,7 +20,7 @@ async function register(req,res){
       let sql2=`insert into user (name,department,semester,mobile,email,username,password) values('${name}','${department}','${semester}','${mobile}','${email}','${username}','${password}')`;
       //let sql1=`select * from user where email='${email}'`
       console.log(password);
-      let sql1=`select * from user where username=${username}`;
+      let sql1=`select * from user where username='${username}'`;
       let sql=`select userid from user where mobile='${mobile}'or email='${email}'`;
       con.query(sql1,function(error,result,fields)
       {
